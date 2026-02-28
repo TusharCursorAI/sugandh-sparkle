@@ -33,9 +33,10 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold text-gold mb-4">Contact</h4>
             <div className="space-y-3 font-body text-sm text-secondary-foreground/70">
-              <p>📞 +91 79210 310</p>
-              <p>💬 WhatsApp: wa.me/9179210310</p>
-              <p>🏭 Poonam Sugandh Mandir, India</p>
+              <p>📞 +91 7869083344</p>
+              <p>📧 poonam16.mandir@rediffmail.com</p>
+              <p>💬 WhatsApp: wa.me/917869083344</p>
+              <p>📍 P.O.B NO. 07, M.G ROAD, INDORE 452 001, MP, INDIA</p>
             </div>
           </div>
         </div>
