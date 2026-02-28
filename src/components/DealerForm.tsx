@@ -30,13 +30,13 @@ const DealerForm = () => {
           className="flex flex-col sm:flex-row gap-5 justify-center"
         >
           <a
-            href="tel:9179210310"
+            href="tel:7869083344"
             className="flex items-center justify-center gap-3 gradient-saffron text-primary-foreground px-8 py-5 rounded-full font-body font-semibold text-lg shadow-gold hover-lift transition-all"
           >
             <Phone className="w-5 h-5" /> Call Now
           </a>
           <a
-            href="https://wa.me/9179210310"
+            href="https://wa.me/917869083344"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 bg-whatsapp text-primary-foreground px-8 py-5 rounded-full font-body font-semibold text-lg shadow-lg hover-lift transition-all"

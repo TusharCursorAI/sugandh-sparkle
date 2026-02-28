@@ -25,7 +25,7 @@ const ContactSection = () => {
           className="flex flex-col sm:flex-row gap-6 justify-center max-w-2xl mx-auto"
         >
           <a
-            href="tel:9179210310"
+            href="tel:7869083344"
             className="flex items-center gap-4 glass-card p-6 hover-lift group bg-dark-surface-light/50 flex-1"
           >
             <div className="w-14 h-14 rounded-full gradient-saffron flex items-center justify-center shadow-gold">
@@ -33,12 +33,12 @@ const ContactSection = () => {
             </div>
             <div>
               <div className="font-body text-sm text-primary-foreground/60">Call Us</div>
-              <div className="font-heading text-xl font-semibold text-primary-foreground">+91 79210 310</div>
+              <div className="font-heading text-xl font-semibold text-primary-foreground">+91 7869083344</div>
             </div>
           </a>
 
           <a
-            href="https://wa.me/9179210310"
+            href="https://wa.me/917869083344"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 glass-card p-6 hover-lift group bg-dark-surface-light/50 flex-1"

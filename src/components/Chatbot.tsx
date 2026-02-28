@@ -26,7 +26,7 @@ const Chatbot = () => {
         ...m,
         {
           from: "bot",
-          text: "Kripya adhik jankari ke liye WhatsApp par sampark karein: wa.me/9179210310 🙏",
+          text: "Kripya adhik jankari ke liye WhatsApp par sampark karein: wa.me/917869083344 🙏",
         },
       ]);
     }, 800);
