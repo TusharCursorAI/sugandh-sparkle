@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check } from "lucide-react";
-import featuredImg from "@/assets/featured-dhoop.jpg";
+import featuredImg from "@/assets/product-gopaldhoop.jpeg";
 
 const features = [
   "Long Lasting Aroma",

@@ -2,15 +2,16 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import heroBg from "@/assets/hero-bg.jpg";
-import featuredImg from "@/assets/featured-dhoop.jpg";
-import productRose from "@/assets/product-rose.jpg";
-import productSandal from "@/assets/product-sandal.jpg";
-import productCone from "@/assets/product-cone.jpg";
-import productFestival from "@/assets/product-festival.jpg";
-import productGold from "@/assets/product-gold.jpg";
+import productChandan from "@/assets/product-chandan.jpeg";
+import productMahakumbh from "@/assets/product-mahakumbh.jpeg";
+import productEndi from "@/assets/product-endi.jpeg";
+import productWelcome from "@/assets/product-welcome2025.jpeg";
+import productAashirvad2 from "@/assets/product-aashirvad2.jpeg";
+import productAashirvad from "@/assets/product-aashirvad.jpeg";
+import productBlackstone from "@/assets/product-blackstone.jpeg";
+import productGopalDhoop from "@/assets/product-gopaldhoop.jpeg";
 
-const images = [heroBg, featuredImg, productRose, productSandal, productCone, productFestival, productGold];
+const images = [productChandan, productMahakumbh, productEndi, productWelcome, productAashirvad2, productAashirvad, productBlackstone, productGopalDhoop];
 
 const ImageGallery = () => {
   const [current, setCurrent] = useState(0);
