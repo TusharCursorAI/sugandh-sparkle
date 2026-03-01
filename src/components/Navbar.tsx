@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <a href="#home" className="font-heading text-2xl font-bold text-gradient-saffron">
-          PSM
+          JAY GOPAL
         </a>
 
         {/* Desktop */}
