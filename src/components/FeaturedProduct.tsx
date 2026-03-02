@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Check, X } from "lucide-react";
+import { Check, X, Eye } from "lucide-react";
 import featuredImg from "@/assets/product-gopaldhoop.jpeg";
 
 const features = [
@@ -83,9 +83,9 @@ const FeaturedProduct = () => {
 
               <button
                 onClick={() => setShowModal(true)}
-                className="inline-block bg-gold px-8 py-4 rounded-full font-body font-semibold text-accent-foreground shadow-gold hover-lift transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 bg-gold px-8 py-4 rounded-full font-body font-semibold text-accent-foreground shadow-gold hover-lift transition-all cursor-pointer"
               >
-                Enquiry Now
+                <Eye className="w-5 h-5" /> View Details
               </button>
             </motion.div>
           </div>

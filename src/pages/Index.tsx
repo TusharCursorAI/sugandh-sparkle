@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturedProduct from "@/components/FeaturedProduct";
 import ProductGrid from "@/components/ProductGrid";
+import PremiumProducts from "@/components/PremiumProducts";
 import ImageGallery from "@/components/ImageGallery";
 import DealerForm from "@/components/DealerForm";
 import AboutSection from "@/components/AboutSection";
@@ -17,6 +18,7 @@ const Index = () => {
       <HeroSection />
       <FeaturedProduct />
       <ProductGrid />
+      <PremiumProducts />
       <ImageGallery />
       <DealerForm />
       <AboutSection />
