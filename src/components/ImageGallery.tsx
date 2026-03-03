@@ -22,8 +22,14 @@ import gallerySatyaSai from "@/assets/gallery-satyasai.jpeg";
 import galleryMysore from "@/assets/gallery-mysore.jpeg";
 import galleryGopalDhoop from "@/assets/gallery-gopaldhoop.jpeg";
 import gallerySuperSeven from "@/assets/gallery-superseven.jpeg";
+import galleryMamta from "@/assets/gallery-mamta.jpeg";
+import galleryMangaldeep from "@/assets/gallery-mangaldeep.jpeg";
+import galleryJayGopal from "@/assets/gallery-jaygopal.jpeg";
+import galleryRed from "@/assets/gallery-red.jpeg";
+import galleryKachaBella2 from "@/assets/gallery-kachabella2.jpeg";
+import galleryLavender from "@/assets/gallery-lavender.jpeg";
 
-const images = [galleryMatarani, galleryGopalDhoop, gallerySuperSeven, galleryKachaBella, galleryLuxury, galleryMoment, galleryMasterpiece, galleryMasterpiece2, galleryRosePark, galleryRosePark2, galleryAnupama, galleryBlackForest, galleryWelcome, galleryPineapple, galleryMahaArti, galleryFantasia, galleryGuggal, galleryVedika, gallerySatyaSai, galleryMysore];
+const images = [galleryMatarani, galleryGopalDhoop, gallerySuperSeven, galleryKachaBella, galleryLuxury, galleryMoment, galleryMasterpiece, galleryMasterpiece2, galleryRosePark, galleryRosePark2, galleryAnupama, galleryBlackForest, galleryWelcome, galleryPineapple, galleryMahaArti, galleryFantasia, galleryGuggal, galleryVedika, gallerySatyaSai, galleryMysore, galleryMamta, galleryMangaldeep, galleryJayGopal, galleryRed, galleryKachaBella2, galleryLavender];
 
 const ImageGallery = () => {
   const [current, setCurrent] = useState(0);
