@@ -9,6 +9,9 @@ import imgSuperSeven from "@/assets/product-superseven.jpeg";
 import imgMasterPiece from "@/assets/product-masterpiece.jpeg";
 import imgVedika from "@/assets/product-vedika.jpeg";
 import imgKachaBella from "@/assets/product-kachabella.jpeg";
+import imgSatyaSai from "@/assets/product-satyasai.jpeg";
+import imgPineapple from "@/assets/product-pineapple.jpeg";
+import imgMysore from "@/assets/product-mysore.jpeg";
 
 interface Product {
   name: string;
@@ -25,6 +28,9 @@ const products: Product[] = [
   { name: "Master Piece Cone Dhoop", image: imgMasterPiece, mrp: "₹360", weight: "500 gm" },
   { name: "Vedika Handmade Flora Batti", image: imgVedika, mrp: "₹320", weight: "250 gm" },
   { name: "Kacha Bella Premium Agarbatti", image: imgKachaBella, mrp: "₹220", weight: "250 gm" },
+  { name: "Satya Sai Handmade Flora Batti", image: imgSatyaSai, mrp: "₹320", weight: "250 gm" },
+  { name: "Pineapple Charcoal Free Dhoop Sticks", image: imgPineapple, mrp: "₹80" },
+  { name: "Mysore Handmade Flora Batti", image: imgMysore, mrp: "₹320", weight: "250 gm" },
 ];
 
 const PremiumProducts = () => {
@@ -70,13 +76,16 @@ const PremiumProducts = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Price badge */}
+                <div className="absolute top-3 right-3 bg-gradient-to-br from-deep-red to-deep-red/90 text-cream px-3 py-1.5 rounded-full shadow-lg border border-gold/40">
+                  <span className="font-heading font-bold text-sm drop-shadow-md">{p.mrp}</span>
+                </div>
               </div>
               <div className="p-5 text-center">
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-1">{p.name}</h3>
-                <p className="font-body text-gold font-bold text-xl mb-4">MRP: {p.mrp}</p>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">{p.name}</h3>
                 <button
                   onClick={() => setSelected(p)}
-                  className="inline-flex items-center gap-2 gradient-saffron text-primary-foreground px-6 py-2.5 rounded-full font-body text-sm font-medium shadow-gold hover-lift transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-deep-red hover:bg-deep-red/90 text-cream px-6 py-2.5 rounded-full font-body text-sm font-medium shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:shadow-gold/20 transition-all duration-300 cursor-pointer"
                 >
                   <Eye className="w-4 h-4" /> View Details
                 </button>
@@ -132,8 +141,8 @@ const PremiumProducts = () => {
                       <span className="font-heading font-bold text-primary-foreground">{selected.weight}</span>
                     </div>
                   )}
-                  <div className="bg-primary-foreground/5 border border-gold/20 rounded-xl px-4 py-2">
-                    <span className="font-body text-xs text-primary-foreground/50 block">M.R.P.</span>
+                  <div className="bg-gradient-to-br from-deep-red to-deep-red/80 border border-gold/30 rounded-xl px-4 py-2">
+                    <span className="font-body text-xs text-cream/70 block">M.R.P.</span>
                     <span className="font-heading font-bold text-gold text-lg">{selected.mrp}</span>
                   </div>
                 </div>
