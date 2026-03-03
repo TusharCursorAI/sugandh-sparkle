@@ -10,8 +10,9 @@ import productAashirvad2 from "@/assets/product-aashirvad2.jpeg";
 import productAashirvad from "@/assets/product-aashirvad.jpeg";
 import productBlackstone from "@/assets/product-blackstone.jpeg";
 import productGopalDhoop from "@/assets/product-gopaldhoop.jpeg";
+import productMatarani from "@/assets/product-matarani.jpeg";
 
-const images = [productChandan, productMahakumbh, productEndi, productWelcome, productAashirvad2, productAashirvad, productBlackstone, productGopalDhoop];
+const images = [productMatarani, productChandan, productMahakumbh, productEndi, productWelcome, productAashirvad2, productAashirvad, productBlackstone, productGopalDhoop];
 
 const ImageGallery = () => {
   const [current, setCurrent] = useState(0);
