@@ -2,17 +2,18 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-import productChandan from "@/assets/product-chandan.jpeg";
-import productMahakumbh from "@/assets/product-mahakumbh.jpeg";
-import productEndi from "@/assets/product-endi.jpeg";
-import productWelcome from "@/assets/product-welcome2025.jpeg";
-import productAashirvad2 from "@/assets/product-aashirvad2.jpeg";
-import productAashirvad from "@/assets/product-aashirvad.jpeg";
-import productBlackstone from "@/assets/product-blackstone.jpeg";
-import productGopalDhoop from "@/assets/product-gopaldhoop.jpeg";
-import productMatarani from "@/assets/product-matarani.jpeg";
+import galleryKachaBella from "@/assets/gallery-kachabella.jpeg";
+import galleryLuxury from "@/assets/gallery-luxury.jpeg";
+import galleryMoment from "@/assets/gallery-moment.jpeg";
+import galleryMasterpiece from "@/assets/gallery-masterpiece.jpeg";
+import galleryRosePark from "@/assets/gallery-rosepark.jpeg";
+import galleryAnupama from "@/assets/gallery-anupama.jpeg";
+import galleryBlackForest from "@/assets/gallery-blackforest.jpeg";
+import galleryWelcome from "@/assets/gallery-welcome2025.jpeg";
+import galleryPineapple from "@/assets/gallery-pineapple.jpeg";
+import galleryMahaArti from "@/assets/gallery-mahaarti.jpeg";
 
-const images = [productMatarani, productChandan, productMahakumbh, productEndi, productWelcome, productAashirvad2, productAashirvad, productBlackstone, productGopalDhoop];
+const images = [galleryKachaBella, galleryLuxury, galleryMoment, galleryMasterpiece, galleryRosePark, galleryAnupama, galleryBlackForest, galleryWelcome, galleryPineapple, galleryMahaArti];
 
 const ImageGallery = () => {
   const [current, setCurrent] = useState(0);
