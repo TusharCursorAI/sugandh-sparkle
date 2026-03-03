@@ -21,7 +21,7 @@ interface Product {
 }
 
 const products: Product[] = [
-  { name: "MahaRani Phool Batti", image: imgMaharani, mrp: "₹20" },
+  { name: "MataRani Phool Batti", image: imgMaharani, mrp: "₹20" },
   { name: "Deepak Ghee Batti", image: imgDeepak, mrp: "₹120", weight: "100 gm" },
   { name: "4 in 1 Charcoal Free Dhoop", image: img4in1, mrp: "₹580", weight: "1 Kg" },
   { name: "Super Seven Agarbatti", image: imgSuperSeven, mrp: "₹220", weight: "250 gm" },
