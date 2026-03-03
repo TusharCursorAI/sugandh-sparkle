@@ -12,8 +12,18 @@ import galleryBlackForest from "@/assets/gallery-blackforest.jpeg";
 import galleryWelcome from "@/assets/gallery-welcome2025.jpeg";
 import galleryPineapple from "@/assets/gallery-pineapple.jpeg";
 import galleryMahaArti from "@/assets/gallery-mahaarti.jpeg";
+import galleryMatarani from "@/assets/gallery-matarani.jpeg";
+import galleryMasterpiece2 from "@/assets/gallery-masterpiece2.jpeg";
+import galleryRosePark2 from "@/assets/gallery-rosepark2.jpeg";
+import galleryFantasia from "@/assets/gallery-fantasia.jpeg";
+import galleryGuggal from "@/assets/gallery-guggal.jpeg";
+import galleryVedika from "@/assets/gallery-vedika.jpeg";
+import gallerySatyaSai from "@/assets/gallery-satyasai.jpeg";
+import galleryMysore from "@/assets/gallery-mysore.jpeg";
+import galleryGopalDhoop from "@/assets/gallery-gopaldhoop.jpeg";
+import gallerySuperSeven from "@/assets/gallery-superseven.jpeg";
 
-const images = [galleryKachaBella, galleryLuxury, galleryMoment, galleryMasterpiece, galleryRosePark, galleryAnupama, galleryBlackForest, galleryWelcome, galleryPineapple, galleryMahaArti];
+const images = [galleryMatarani, galleryGopalDhoop, gallerySuperSeven, galleryKachaBella, galleryLuxury, galleryMoment, galleryMasterpiece, galleryMasterpiece2, galleryRosePark, galleryRosePark2, galleryAnupama, galleryBlackForest, galleryWelcome, galleryPineapple, galleryMahaArti, galleryFantasia, galleryGuggal, galleryVedika, gallerySatyaSai, galleryMysore];
 
 const ImageGallery = () => {
   const [current, setCurrent] = useState(0);
