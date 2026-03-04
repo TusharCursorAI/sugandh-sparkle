@@ -68,11 +68,16 @@ const NavratriSpecial = () => {
                   🪔 Navratri Special
                 </div>
                 {/* Price Badge */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gold rounded-full flex items-center justify-center shadow-gold">
+                <div className="absolute -bottom-4 -right-4 w-28 h-28 bg-gold rounded-full flex items-center justify-center shadow-gold">
                   <div className="text-center">
-                    <span className="font-heading text-xs font-bold text-accent-foreground block">MRP</span>
-                    <span className="font-heading text-lg font-bold text-accent-foreground">₹1050</span>
+                    <span className="font-body text-xs text-accent-foreground/70 line-through block">₹1050</span>
+                    <span className="font-heading text-xl font-bold text-deep-red">₹999</span>
+                    <span className="font-body text-[9px] font-bold text-accent-foreground block">OFFER</span>
                   </div>
+                </div>
+                {/* Offer Badge */}
+                <div className="absolute top-4 right-4 bg-saffron text-primary-foreground px-3 py-1 rounded-full font-body text-[10px] font-bold tracking-wider shadow-lg animate-pulse">
+                  🎉 Special Price
                 </div>
               </motion.div>
 
