@@ -90,9 +90,14 @@ const NavratriSpecial = () => {
                 <h3 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-2">
                   Maa Durga Sthapna Kit
                 </h3>
-                <p className="font-body text-gold text-sm font-semibold uppercase tracking-widest mb-6">
+                <p className="font-body text-gold text-sm font-semibold uppercase tracking-widest mb-4">
                   Havan Pujan Samagri
                 </p>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="font-body text-lg text-primary-foreground/50 line-through">₹1050</span>
+                  <span className="font-heading text-3xl font-bold text-saffron">₹999</span>
+                  <span className="bg-deep-red/80 text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full">SAVE ₹51</span>
+                </div>
                 <p className="font-body text-primary-foreground/70 text-base leading-relaxed mb-8">
                   माँ दुर्गा की स्थापना एवं हवन पूजन के लिए विशेष रूप से तैयार की गई सम्पूर्ण पूजा किट। नवरात्रि पूजा को सरल और पूर्ण बनाने के लिए सभी आवश्यक सामग्री शामिल।
                 </p>
