@@ -18,6 +18,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FeaturedProduct />
+      <NavratriSpecial />
       <PremiumProducts />
       <ImageGallery />
       <DealerForm />
