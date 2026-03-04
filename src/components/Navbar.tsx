@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/logo-jaygopal.jpeg";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -33,8 +34,9 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#home" className="font-heading text-2xl font-bold text-gradient-saffron">
-          JAY GOPAL
+        <a href="#home" className="flex items-center gap-2.5">
+          <img src={logoImg} alt="Jay Gopal Logo" className="h-10 md:h-11 w-auto rounded-sm object-contain" />
+          <span className="font-heading text-2xl font-bold text-gradient-saffron">JAY GOPAL</span>
         </a>
 
         {/* Desktop */}
@@ -53,10 +55,11 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-primary-foreground"
+          onClick={() => setOpen((prev) => !prev)}
+          className="md:hidden text-primary-foreground p-2 rounded-md hover:bg-primary/20 transition-colors z-50"
+          aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
