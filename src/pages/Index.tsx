@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturedProduct from "@/components/FeaturedProduct";
+import NavratriSpecial from "@/components/NavratriSpecial";
 import ProductGrid from "@/components/ProductGrid";
 import PremiumProducts from "@/components/PremiumProducts";
 import ImageGallery from "@/components/ImageGallery";
