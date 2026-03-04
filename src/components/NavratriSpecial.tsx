@@ -68,11 +68,16 @@ const NavratriSpecial = () => {
                   🪔 Navratri Special
                 </div>
                 {/* Price Badge */}
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gold rounded-full flex items-center justify-center shadow-gold">
+                <div className="absolute -bottom-4 -right-4 w-28 h-28 bg-gold rounded-full flex items-center justify-center shadow-gold">
                   <div className="text-center">
-                    <span className="font-heading text-xs font-bold text-accent-foreground block">MRP</span>
-                    <span className="font-heading text-lg font-bold text-accent-foreground">₹1050</span>
+                    <span className="font-body text-xs text-accent-foreground/70 line-through block">₹1050</span>
+                    <span className="font-heading text-xl font-bold text-deep-red">₹999</span>
+                    <span className="font-body text-[9px] font-bold text-accent-foreground block">OFFER</span>
                   </div>
+                </div>
+                {/* Offer Badge */}
+                <div className="absolute top-4 right-4 bg-saffron text-primary-foreground px-3 py-1 rounded-full font-body text-[10px] font-bold tracking-wider shadow-lg animate-pulse">
+                  🎉 Special Price
                 </div>
               </motion.div>
 
@@ -85,9 +90,14 @@ const NavratriSpecial = () => {
                 <h3 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-2">
                   Maa Durga Sthapna Kit
                 </h3>
-                <p className="font-body text-gold text-sm font-semibold uppercase tracking-widest mb-6">
+                <p className="font-body text-gold text-sm font-semibold uppercase tracking-widest mb-4">
                   Havan Pujan Samagri
                 </p>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="font-body text-lg text-primary-foreground/50 line-through">₹1050</span>
+                  <span className="font-heading text-3xl font-bold text-saffron">₹999</span>
+                  <span className="bg-deep-red/80 text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full">SAVE ₹51</span>
+                </div>
                 <p className="font-body text-primary-foreground/70 text-base leading-relaxed mb-8">
                   माँ दुर्गा की स्थापना एवं हवन पूजन के लिए विशेष रूप से तैयार की गई सम्पूर्ण पूजा किट। नवरात्रि पूजा को सरल और पूर्ण बनाने के लिए सभी आवश्यक सामग्री शामिल।
                 </p>
@@ -158,7 +168,11 @@ const NavratriSpecial = () => {
                   <h3 className="font-heading text-2xl md:text-3xl font-bold text-gold leading-tight">
                     Maa Durga Sthapna Evam Havan Pujan Samagri Kit
                   </h3>
-                  <p className="font-body text-lg font-bold text-saffron mt-2">MRP: ₹1,050/-</p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="font-body text-base text-primary-foreground/40 line-through">₹1,050/-</span>
+                    <span className="font-heading text-2xl font-bold text-saffron">₹999/-</span>
+                    <span className="bg-deep-red/80 text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full">NAVRATRI OFFER</span>
+                  </div>
                 </div>
 
                 {/* Description */}
