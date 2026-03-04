@@ -168,7 +168,11 @@ const NavratriSpecial = () => {
                   <h3 className="font-heading text-2xl md:text-3xl font-bold text-gold leading-tight">
                     Maa Durga Sthapna Evam Havan Pujan Samagri Kit
                   </h3>
-                  <p className="font-body text-lg font-bold text-saffron mt-2">MRP: ₹1,050/-</p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="font-body text-base text-primary-foreground/40 line-through">₹1,050/-</span>
+                    <span className="font-heading text-2xl font-bold text-saffron">₹999/-</span>
+                    <span className="bg-deep-red/80 text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full">NAVRATRI OFFER</span>
+                  </div>
                 </div>
 
                 {/* Description */}
