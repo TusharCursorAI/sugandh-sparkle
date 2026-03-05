@@ -1,34 +1,102 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Phone } from "lucide-react";
+import { X, Send, Phone, Bot, Loader2 } from "lucide-react";
+
+const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
+
 interface Message {
-  from: "user" | "bot";
-  text: string;
+  role: "user" | "assistant";
+  content: string;
 }
 
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { from: "bot", text: "Namaste! 🙏 PSM me aapka swagat hai. Kya sahayata chahiye?" },
+    { role: "assistant", content: "Namaste! 🙏 PSM AI Assistant me aapka swagat hai. Kya sahayata chahiye?" },
   ]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const sendMessage = () => {
-    if (!input.trim()) return;
-    const userMsg = input.trim();
-    setMessages((m) => [...m, { from: "user", text: userMsg }]);
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
+  const sendMessage = async () => {
+    if (!input.trim() || isLoading) return;
+    const userMsg: Message = { role: "user", content: input.trim() };
+    const allMessages = [...messages, userMsg];
+    setMessages(allMessages);
     setInput("");
+    setIsLoading(true);
 
-    // Auto reply (future: replace with n8n webhook call)
-    setTimeout(() => {
-      setMessages((m) => [
-        ...m,
-        {
-          from: "bot",
-          text: "Kripya adhik jankari ke liye WhatsApp par sampark karein: wa.me/917869083344 🙏",
+    let assistantSoFar = "";
+
+    try {
+      const resp = await fetch(CHAT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
         },
+        body: JSON.stringify({ messages: allMessages }),
+      });
+
+      if (!resp.ok || !resp.body) {
+        throw new Error("Failed to get AI response");
+      }
+
+      const reader = resp.body.getReader();
+      const decoder = new TextDecoder();
+      let textBuffer = "";
+      let streamDone = false;
+
+      while (!streamDone) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        textBuffer += decoder.decode(value, { stream: true });
+
+        let newlineIndex: number;
+        while ((newlineIndex = textBuffer.indexOf("\n")) !== -1) {
+          let line = textBuffer.slice(0, newlineIndex);
+          textBuffer = textBuffer.slice(newlineIndex + 1);
+
+          if (line.endsWith("\r")) line = line.slice(0, -1);
+          if (line.startsWith(":") || line.trim() === "") continue;
+          if (!line.startsWith("data: ")) continue;
+
+          const jsonStr = line.slice(6).trim();
+          if (jsonStr === "[DONE]") { streamDone = true; break; }
+
+          try {
+            const parsed = JSON.parse(jsonStr);
+            const content = parsed.choices?.[0]?.delta?.content as string | undefined;
+            if (content) {
+              assistantSoFar += content;
+              const updated = assistantSoFar;
+              setMessages((prev) => {
+                const last = prev[prev.length - 1];
+                if (last?.role === "assistant" && prev.length > 1 && prev[prev.length - 2]?.role === "user") {
+                  return prev.map((m, i) => (i === prev.length - 1 ? { ...m, content: updated } : m));
+                }
+                return [...prev, { role: "assistant", content: updated }];
+              });
+            }
+          } catch {
+            textBuffer = line + "\n" + textBuffer;
+            break;
+          }
+        }
+      }
+    } catch (e) {
+      console.error("Chat error:", e);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Sorry, kuch problem ho gayi. Kripya WhatsApp par sampark karein: wa.me/917869083344 🙏" },
       ]);
-    }, 800);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -46,7 +114,7 @@ const Chatbot = () => {
               onClick={() => setOpen(true)}
               className="w-14 h-14 rounded-full gradient-saffron flex items-center justify-center shadow-gold pulse-glow cursor-pointer"
             >
-              <MessageCircle className="w-6 h-6 text-primary-foreground" />
+              <Bot className="w-7 h-7 text-primary-foreground" />
             </button>
             <a
               href="https://wa.me/917869083344"
@@ -80,30 +148,54 @@ const Chatbot = () => {
           >
             {/* Header */}
             <div className="gradient-saffron px-5 py-4 flex items-center justify-between">
-              <div>
-                <div className="font-heading font-bold text-primary-foreground">PSM Support</div>
-                <div className="text-xs text-primary-foreground/70 font-body">Online</div>
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-primary-foreground/20 flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <div>
+                  <div className="font-heading font-bold text-primary-foreground">PSM AI Assistant</div>
+                  <div className="text-xs text-primary-foreground/70 font-body flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
+                    Online
+                  </div>
+                </div>
               </div>
-              <button onClick={() => setOpen(false)}>
+              <button onClick={() => setOpen(false)} className="cursor-pointer">
                 <X className="w-5 h-5 text-primary-foreground" />
               </button>
             </div>
 
             {/* Messages */}
-            <div className="h-64 overflow-y-auto p-4 space-y-3 bg-background">
+            <div className="h-72 overflow-y-auto p-4 space-y-3 bg-background">
               {messages.map((m, i) => (
-                <div key={i} className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}>
+                <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                  {m.role === "assistant" && (
+                    <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center mr-2 shrink-0 mt-1">
+                      <Bot className="w-4 h-4 text-primary" />
+                    </div>
+                  )}
                   <div
-                    className={`max-w-[80%] px-4 py-2.5 rounded-2xl font-body text-sm ${
-                      m.from === "user"
+                    className={`max-w-[75%] px-4 py-2.5 rounded-2xl font-body text-sm whitespace-pre-wrap ${
+                      m.role === "user"
                         ? "gradient-saffron text-primary-foreground rounded-br-sm"
                         : "bg-muted text-foreground rounded-bl-sm"
                     }`}
                   >
-                    {m.text}
+                    {m.content}
                   </div>
                 </div>
               ))}
+              {isLoading && messages[messages.length - 1]?.role === "user" && (
+                <div className="flex justify-start">
+                  <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center mr-2 shrink-0">
+                    <Bot className="w-4 h-4 text-primary" />
+                  </div>
+                  <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-sm">
+                    <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input */}
@@ -112,12 +204,14 @@ const Chatbot = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-                placeholder="Type a message..."
-                className="flex-1 px-4 py-2.5 rounded-full bg-muted border-0 font-body text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-primary/30"
+                placeholder="Apna sawaal poochein..."
+                disabled={isLoading}
+                className="flex-1 px-4 py-2.5 rounded-full bg-muted border-0 font-body text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
               />
               <button
                 onClick={sendMessage}
-                className="w-10 h-10 rounded-full gradient-saffron flex items-center justify-center"
+                disabled={isLoading}
+                className="w-10 h-10 rounded-full gradient-saffron flex items-center justify-center cursor-pointer disabled:opacity-50"
               >
                 <Send className="w-4 h-4 text-primary-foreground" />
               </button>
