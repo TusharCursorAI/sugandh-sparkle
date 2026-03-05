@@ -28,7 +28,7 @@ const FeaturedProduct = () => {
 
   return (
     <>
-      <section className="py-24 bg-dark-surface" ref={ref}>
+      <section id="products" className="py-24 bg-dark-surface" ref={ref}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Image */}
