@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send } from "lucide-react";
-
+import { MessageCircle, X, Send, Phone } from "lucide-react";
 interface Message {
   from: "user" | "bot";
   text: string;
