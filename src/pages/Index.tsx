@@ -25,7 +25,7 @@ const Index = () => {
       <AboutSection />
       <ContactSection />
       <Footer />
-      <FloatingButtons />
+      
       <Chatbot />
     </div>
   );
