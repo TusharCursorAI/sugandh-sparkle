@@ -63,7 +63,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
+        {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -77,7 +77,16 @@ const Navbar = () => {
                 <a
                   key={l.href}
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpen(false);
+                    const target = document.querySelector(l.href);
+                    if (target) {
+                      setTimeout(() => {
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }, 300);
+                    }
+                  }}
                   className="font-body text-base text-primary-foreground/90 hover:text-primary transition-colors"
                 >
                   {l.label}

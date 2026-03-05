@@ -4,8 +4,8 @@ import { Eye, Phone, X, Sparkles } from "lucide-react";
 import maaDurgaImg from "@/assets/product-maadurga.jpeg";
 
 const kitContents = [
-  "Hadli – 50 gm", "Supari – 50 gm", "Janew – 5 pcs", "Kumkum – 1 box",
-  "Sindoor – 1 box", "Chandan – 1 pkt", "Agarbatti – 20 pcs", "Gila Dhoop – 20 pcs",
+  "Haldi – 50 gm", "Supari – 50 gm", "Janew – 5 pcs", "Kumkum – 1 box",
+  "Sindoor – 1 box", "Chandan – 1 pkt", "Agarbatti – 1 Box", "Gila Dhoop – 20 pcs",
   "Lal Kapda – 1.25 mtr", "White Kapda – 0.5 mtr", "Tus Kapda – 0.5 mtr", "Kapoor – 50 gm",
   "Phool Batti – Mata Rani", "Lambi Batti – Kanchan", "Akhand Jyot – 1 pcs", "Panchmawa – 1 pcs",
   "Sabut Chawal – 50 gm", "Moli Kalawa – 1 pcs", "Gopal Dhoop – 400 gm", "Nariyal – 2 pcs",
