@@ -8,7 +8,7 @@ import ImageGallery from "@/components/ImageGallery";
 import DealerForm from "@/components/DealerForm";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
-import FloatingButtons from "@/components/FloatingButtons";
+
 import Chatbot from "@/components/Chatbot";
 import Footer from "@/components/Footer";
 
