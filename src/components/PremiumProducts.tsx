@@ -130,7 +130,7 @@ const PremiumProducts = () => {
               <img
                 src={selected.image}
                 alt={selected.name}
-                className="w-full h-56 object-cover"
+                className="w-full h-64 object-contain bg-cream/5"
               />
 
               <div className="p-6">
