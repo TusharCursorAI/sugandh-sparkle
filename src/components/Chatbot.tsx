@@ -188,8 +188,8 @@ const Chatbot = () => {
               ))}
               {isLoading && messages[messages.length - 1]?.role === "user" && (
                 <div className="flex justify-start">
-                  <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center mr-2 shrink-0">
-                    <Bot className="w-4 h-4 text-primary" />
+                  <div className="w-7 h-7 rounded-full overflow-hidden mr-2 shrink-0">
+                    <img src={logoImg} alt="Jay Gopal" className="w-full h-full object-cover" />
                   </div>
                   <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-sm">
                     <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
