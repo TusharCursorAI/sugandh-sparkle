@@ -145,9 +145,11 @@ const PremiumProducts = () => {
                       <span className="font-heading font-bold text-primary-foreground">{selected.weight}</span>
                     </div>
                   )}
-                  <div className="bg-gradient-to-br from-deep-red to-deep-red/80 border border-gold/30 rounded-xl px-4 py-2">
+                  <div className="bg-gradient-to-br from-deep-red to-deep-red/80 border border-gold/30 rounded-xl px-5 py-3">
                     <span className="font-body text-xs text-cream/70 block">M.R.P.</span>
-                    <span className="font-heading font-bold text-gold text-lg">{selected.mrp}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-heading font-bold text-gold text-xl">{selected.mrp}</span>
+                    </div>
                   </div>
                 </div>
 

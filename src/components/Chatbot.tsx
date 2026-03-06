@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Phone, Bot, Loader2 } from "lucide-react";
+import { X, Send, Phone, Loader2 } from "lucide-react";
+import logoImg from "@/assets/logo-jaygopal.jpeg";
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
 
