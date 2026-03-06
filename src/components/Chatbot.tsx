@@ -115,7 +115,7 @@ const Chatbot = () => {
               onClick={() => setOpen(true)}
               className="w-14 h-14 rounded-full gradient-saffron flex items-center justify-center shadow-gold pulse-glow cursor-pointer"
             >
-              <Bot className="w-7 h-7 text-primary-foreground" />
+              <img src={logoImg} alt="Jay Gopal" className="w-8 h-8 rounded-full object-cover" />
             </button>
             <a
               href="https://wa.me/917869083344"
