@@ -154,7 +154,7 @@ const Chatbot = () => {
                   <img src={logoImg} alt="Jay Gopal" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <div className="font-heading font-bold text-primary-foreground">PSM AI Assistant</div>
+                  <div className="font-heading font-bold text-primary-foreground">Jay Gopal AI</div>
                   <div className="text-xs text-primary-foreground/70 font-body flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
                     Online
