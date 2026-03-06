@@ -87,8 +87,8 @@ const ProductGrid = () => {
               transition={{ delay: i * 0.08 }}
               className="glass-card overflow-hidden hover-lift hover-glow group"
             >
-              <div className="relative overflow-hidden h-52">
-                <img src={p.image} alt={p.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="relative overflow-hidden h-56">
+                <img src={p.image} alt={p.name} className="w-full h-full object-contain bg-cream/5 p-2 transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-3 left-3">
                   <span className="bg-primary/90 text-primary-foreground text-xs font-body font-medium px-3 py-1 rounded-full">
                     {p.category}

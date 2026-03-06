@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Phone, Bot, Loader2 } from "lucide-react";
+import { X, Send, Phone, Loader2 } from "lucide-react";
+import logoImg from "@/assets/logo-jaygopal.jpeg";
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
 
@@ -114,7 +115,7 @@ const Chatbot = () => {
               onClick={() => setOpen(true)}
               className="w-14 h-14 rounded-full gradient-saffron flex items-center justify-center shadow-gold pulse-glow cursor-pointer"
             >
-              <Bot className="w-7 h-7 text-primary-foreground" />
+              <img src={logoImg} alt="Jay Gopal" className="w-8 h-8 rounded-full object-cover" />
             </button>
             <a
               href="https://wa.me/917869083344"
@@ -149,11 +150,11 @@ const Chatbot = () => {
             {/* Header */}
             <div className="gradient-saffron px-5 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-primary-foreground" />
+                <div className="w-9 h-9 rounded-full overflow-hidden">
+                  <img src={logoImg} alt="Jay Gopal" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <div className="font-heading font-bold text-primary-foreground">PSM AI Assistant</div>
+                  <div className="font-heading font-bold text-primary-foreground">Jay Gopal AI</div>
                   <div className="text-xs text-primary-foreground/70 font-body flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
                     Online
@@ -170,8 +171,8 @@ const Chatbot = () => {
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                   {m.role === "assistant" && (
-                    <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center mr-2 shrink-0 mt-1">
-                      <Bot className="w-4 h-4 text-primary" />
+                    <div className="w-7 h-7 rounded-full overflow-hidden mr-2 shrink-0 mt-1">
+                      <img src={logoImg} alt="Jay Gopal" className="w-full h-full object-cover" />
                     </div>
                   )}
                   <div
@@ -187,8 +188,8 @@ const Chatbot = () => {
               ))}
               {isLoading && messages[messages.length - 1]?.role === "user" && (
                 <div className="flex justify-start">
-                  <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center mr-2 shrink-0">
-                    <Bot className="w-4 h-4 text-primary" />
+                  <div className="w-7 h-7 rounded-full overflow-hidden mr-2 shrink-0">
+                    <img src={logoImg} alt="Jay Gopal" className="w-full h-full object-cover" />
                   </div>
                   <div className="bg-muted px-4 py-3 rounded-2xl rounded-bl-sm">
                     <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
