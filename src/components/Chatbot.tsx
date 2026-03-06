@@ -150,8 +150,8 @@ const Chatbot = () => {
             {/* Header */}
             <div className="gradient-saffron px-5 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-primary-foreground" />
+                <div className="w-9 h-9 rounded-full overflow-hidden">
+                  <img src={logoImg} alt="Jay Gopal" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="font-heading font-bold text-primary-foreground">PSM AI Assistant</div>
