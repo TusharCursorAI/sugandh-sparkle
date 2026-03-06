@@ -171,8 +171,8 @@ const Chatbot = () => {
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                   {m.role === "assistant" && (
-                    <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center mr-2 shrink-0 mt-1">
-                      <Bot className="w-4 h-4 text-primary" />
+                    <div className="w-7 h-7 rounded-full overflow-hidden mr-2 shrink-0 mt-1">
+                      <img src={logoImg} alt="Jay Gopal" className="w-full h-full object-cover" />
                     </div>
                   )}
                   <div
