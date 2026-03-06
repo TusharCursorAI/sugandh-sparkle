@@ -78,21 +78,19 @@ const PremiumProducts = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="p-5 space-y-3">
-                <h3 className="font-heading text-lg font-semibold text-foreground leading-snug">{p.name}</h3>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="font-heading font-bold text-xl text-gold">{p.mrp}</span>
-                    {p.weight && (
-                      <span className="font-body text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">{p.weight}</span>
-                    )}
-                  </div>
-                  <button
-                    onClick={() => setSelected(p)}
-                    className="inline-flex items-center gap-1.5 bg-deep-red hover:bg-deep-red/90 text-cream px-4 py-2 rounded-full font-body text-xs font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
-                  >
-                    <Eye className="w-3.5 h-3.5" /> Details
-                  </button>
+                <h3 className="font-heading text-lg font-bold text-foreground leading-snug">{p.name}</h3>
+                <div className="flex items-center gap-3 bg-dark-surface/80 border border-gold/20 rounded-xl px-4 py-2.5">
+                  <span className="font-heading font-extrabold text-2xl text-gold drop-shadow-sm">{p.mrp}</span>
+                  {p.weight && (
+                    <span className="font-body text-sm font-bold text-foreground bg-gold/15 border border-gold/30 px-2.5 py-0.5 rounded-full">{p.weight}</span>
+                  )}
                 </div>
+                <button
+                  onClick={() => setSelected(p)}
+                  className="inline-flex items-center gap-1.5 w-full justify-center bg-deep-red hover:bg-deep-red/90 text-cream px-4 py-2.5 rounded-full font-body text-sm font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                >
+                  <Eye className="w-4 h-4" /> View Details
+                </button>
               </div>
             </motion.div>
           ))}
