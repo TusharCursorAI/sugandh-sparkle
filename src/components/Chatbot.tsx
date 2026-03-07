@@ -200,19 +200,19 @@ const Chatbot = () => {
             </div>
 
             {/* Input */}
-            <div className="p-3 border-t border-border flex gap-2 bg-card">
+            <div className="p-2 sm:p-3 border-t border-border flex items-center gap-2 bg-card shrink-0">
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
                 placeholder="Apna sawaal poochein..."
                 disabled={isLoading}
-                className="flex-1 px-4 py-2.5 rounded-full bg-muted border-0 font-body text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
+                className="min-w-0 flex-1 px-3 sm:px-4 py-2.5 rounded-full bg-muted border-0 font-body text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-50"
               />
               <button
                 onClick={sendMessage}
                 disabled={isLoading}
-                className="w-10 h-10 rounded-full gradient-saffron flex items-center justify-center cursor-pointer disabled:opacity-50"
+                className="w-10 h-10 shrink-0 rounded-full gradient-saffron flex items-center justify-center cursor-pointer disabled:opacity-50"
               >
                 <Send className="w-4 h-4 text-primary-foreground" />
               </button>
