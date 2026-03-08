@@ -35,6 +35,7 @@ const Footer = () => {
             <div className="space-y-3 font-body text-sm text-secondary-foreground/70">
               <p>📞 +91 7869083344</p>
               <p>📧 poonam16.mandir@rediffmail.com</p>
+              <p>📧 Jaygopal.nityam@gmail.com</p>
               <p>💬 WhatsApp: wa.me/917869083344</p>
               <p>📍 P.O.B NO. 07, M.G ROAD, INDORE 452 001, MP, INDIA</p>
             </div>
