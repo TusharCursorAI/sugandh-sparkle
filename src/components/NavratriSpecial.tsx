@@ -25,6 +25,24 @@ const NavratriSpecial = () => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [showModal, setShowModal] = useState(false);
 
+  const shareProduct = async () => {
+    const shareData = {
+      title: "Maa Durga Sthapna Kit – Navratri Special ₹999",
+      text: "🪔 Navratri Special! Maa Durga Sthapna Evam Havan Pujan Samagri Kit – MRP ₹1050, Offer ₹999 only! 34 items included. Order now:",
+      url: window.location.origin,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+        toast.success("Link copied! Share it with your friends.");
+      }
+    } catch {
+      // user cancelled share
+    }
+  };
+
   return (
     <>
       <section className="py-24 relative overflow-hidden" ref={ref} style={{ background: "linear-gradient(135deg, hsl(var(--dark-surface)) 0%, hsl(15 60% 8%) 50%, hsl(var(--dark-surface)) 100%)" }}>
