@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Eye, Phone, X, Sparkles } from "lucide-react";
+import { Eye, Phone, X, Sparkles, Share2 } from "lucide-react";
+import { toast } from "sonner";
 import maaDurgaImg from "@/assets/product-maadurga.jpeg";
 
 const kitContents = [
@@ -23,6 +24,24 @@ const NavratriSpecial = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const [showModal, setShowModal] = useState(false);
+
+  const shareProduct = async () => {
+    const shareData = {
+      title: "Maa Durga Sthapna Kit – Navratri Special ₹999",
+      text: "🪔 Navratri Special! Maa Durga Sthapna Evam Havan Pujan Samagri Kit – MRP ₹1050, Offer ₹999 only! 34 items included. Order now:",
+      url: window.location.origin,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+        toast.success("Link copied! Share it with your friends.");
+      }
+    } catch {
+      // user cancelled share
+    }
+  };
 
   return (
     <>
@@ -121,6 +140,12 @@ const NavratriSpecial = () => {
                   >
                     Enquiry Now
                   </a>
+                  <button
+                    onClick={shareProduct}
+                    className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-gold/30 px-6 py-3.5 rounded-full font-body font-semibold text-gold hover:bg-primary-foreground/20 transition-all cursor-pointer"
+                  >
+                    <Share2 className="w-5 h-5" /> Share
+                  </button>
                 </div>
               </motion.div>
             </div>
@@ -219,6 +244,12 @@ const NavratriSpecial = () => {
                     <Phone className="w-5 h-5" /> Call Now
                   </a>
                 </div>
+                <button
+                  onClick={shareProduct}
+                  className="flex items-center justify-center gap-2 w-full mt-3 py-3 rounded-full border border-gold/30 text-gold font-body font-semibold hover:bg-primary-foreground/10 transition-all cursor-pointer"
+                >
+                  <Share2 className="w-4 h-4" /> Share This Product
+                </button>
               </div>
             </motion.div>
           </motion.div>
