@@ -14,7 +14,7 @@ const sizes = [
   { weight: "90GM", price: "₹15" },
   { weight: "200GM", price: "₹40" },
   { weight: "400GM", price: "₹60" },
-  { weight: "1KG", price: "₹95" },
+  { weight: "1KG", price: "₹150" },
 ];
 
 const FeaturedProduct = () => {
