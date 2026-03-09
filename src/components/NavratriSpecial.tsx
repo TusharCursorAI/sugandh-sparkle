@@ -244,6 +244,12 @@ const NavratriSpecial = () => {
                     <Phone className="w-5 h-5" /> Call Now
                   </a>
                 </div>
+                <button
+                  onClick={shareProduct}
+                  className="flex items-center justify-center gap-2 w-full mt-3 py-3 rounded-full border border-gold/30 text-gold font-body font-semibold hover:bg-primary-foreground/10 transition-all cursor-pointer"
+                >
+                  <Share2 className="w-4 h-4" /> Share This Product
+                </button>
               </div>
             </motion.div>
           </motion.div>
