@@ -140,6 +140,12 @@ const NavratriSpecial = () => {
                   >
                     Enquiry Now
                   </a>
+                  <button
+                    onClick={shareProduct}
+                    className="inline-flex items-center gap-2 bg-primary-foreground/10 border border-gold/30 px-6 py-3.5 rounded-full font-body font-semibold text-gold hover:bg-primary-foreground/20 transition-all cursor-pointer"
+                  >
+                    <Share2 className="w-5 h-5" /> Share
+                  </button>
                 </div>
               </motion.div>
             </div>
