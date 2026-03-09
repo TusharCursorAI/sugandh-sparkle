@@ -1,6 +1,7 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Eye, Phone, X, Sparkles } from "lucide-react";
+import { Eye, Phone, X, Sparkles, Share2 } from "lucide-react";
+import { toast } from "sonner";
 import maaDurgaImg from "@/assets/product-maadurga.jpeg";
 
 const kitContents = [
